@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508155627538",
+    "project_id": "bookish-fishbowl",
+    "storage_bucket": "bookish-fishbowl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508155627538:android:a3b1fc9835dcf886a270cb",
+        "android_client_info": {
+          "package_name": "com.example.bookish_fishfillet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3OBzqtBOgSukEB5mdpUwauXUpa62eMPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
