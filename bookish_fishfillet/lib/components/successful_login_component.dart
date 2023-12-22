@@ -1,3 +1,5 @@
+import 'package:bookish_fishfillet/components/Authentication.dart';
+import 'package:bookish_fishfillet/components/auth_component.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,31 @@ class _LoginSuccessComponentState extends State<LoginSuccessComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('UID: ${_user.uid}'),
+            Text('Display Name: ${_user.displayName}'),
+            Text('Email Address: ${_user.email}'),
+            _user.emailVerified
+                ? const Text('Email Verified')
+                : OutlinedButton(
+                    onPressed: () {
+                      _user.sendEmailVerification();
+                    },
+                    child: const Text('Send Email Verification')),
+            IconButton(
+                onPressed: () {
+                  Authentication.signoutUser(_user);
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => AuthComponent()));
+                },
+                icon: const Icon(Icons.logout))
+          ],
+        ),
+      ),
+    );
   }
 }
